@@ -15,7 +15,7 @@ def main(filename):
         # for path, code, line, char, description in fileparser.parse():
         #    errors.append((code, line, char, description))
 
-        qf['feedback'] = "hola"
+        qf['feedback'] = {"hola"}
         qf.close()
 
 
