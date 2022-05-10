@@ -1,11 +1,11 @@
 class Error:
 
     def __init__(self, fileName, code, line, column):
-        self.msgsSyntax = self.load_properties("../flake8-syntax-msgs.properties")
+        self.msgsSyntax = self.load_properties("./flake8-syntax-msgs.properties")
 
-        self.msgsSemantic = self.load_properties("../flake8-semantic-msgs.properties")
+        self.msgsSemantic = self.load_properties("./flake8-semantic-msgs.properties")
 
-        self.msgsStyle = self.load_properties("../flake8-style-msgs.properties")
+        self.msgsStyle = self.load_properties("./flake8-style-msgs.properties")
 
         self.fileName = fileName
         self.code = code
