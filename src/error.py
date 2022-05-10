@@ -26,6 +26,9 @@ class Error:
     def toString(self):
         return self.type + " - " + self.code + " (" + self.line + "," + self.column + ") --> " + self.msg
 
+    def toMarkdown(self):
+        return "**Line: "+self.line+", Column: "+self.column+"**  \n"+self.msg+"\n\n---"
+
     def load_properties(self,filepath, sep='=', comment_char='#'):
         """
         Read the file passed as parameter as a properties file.
