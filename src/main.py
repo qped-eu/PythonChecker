@@ -9,14 +9,16 @@ def main(filename):
         #fileparser = Parser(f)
         errors = []
 
-        qf = open('qf.json', 'w')
+        json_file = open('qf.json')
+        qf = json.load(json_file)
         qf['feedback'] = {'apple', 'orange', 'apple', 'pear', 'orange', 'banana'}
 
         # for path, code, line, char, description in fileparser.parse():
         #    errors.append((code, line, char, description))
 
         #qf['feedback'] = {"hola"}
-        qf.close()
+        json.dump(qf, json_file)
+        json_file.close()
 
 
     except IOError as e:
