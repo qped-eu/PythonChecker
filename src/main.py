@@ -16,7 +16,7 @@ def main(filename):
         for path, code, line, char, description in fileparser.parse():
            errors.append((code, line, char, description))
 
-        qf['feedback'] = ["eps"] #errors
+        qf['feedback'] = errors
         json_file = open('qf.json','w')
         json.dump(qf, json_file)
         json_file.close()
