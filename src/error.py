@@ -27,7 +27,7 @@ class Error:
                 self.msg = self.msgsSemantic[code]
             else:
                 self.type = "STYLE"
-                self.msg = self.msgsStyle["E999"] #self.msgsStyle[code]
+                self.msg = self.msgsStyle["E101"] #self.msgsStyle[code]
 
     def toString(self):
         return self.type + " - " + self.code + " (" + self.line + "," + self.column + ") --> " + self.msg
