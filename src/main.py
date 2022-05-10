@@ -4,19 +4,19 @@ import json
 
 def main(filename):
     try:
-        filename = "./output.txt"
-        f = open(filename)
-        fileparser = Parser(f)
+        #filename = "./output.txt"
+        #f = open(filename)
+        #fileparser = Parser(f)
         errors = []
 
         json_file = open('qf.json')
         qf = json.load(json_file)
         json_file.close()
 
-        for path, code, line, char, description in fileparser.parse():
-            errors.append((code, line, char, description))
+        #for path, code, line, char, description in fileparser.parse():
+        #   errors.append((code, line, char, description))
 
-        qf['feedback'] = errors
+        qf['feedback'] = ["hola"] #errors
         json_file = open('qf.json','w')
         json.dump(qf, json_file)
         json_file.close()
