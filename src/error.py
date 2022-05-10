@@ -22,7 +22,7 @@ class Error:
             self.type = "SYNTAX"
             self.msg = self.msgsSyntax[code]
         else:
-            if code in self.msgsSemantic[code]:
+            if code in self.msgsSemantic:
                 self.type = "SEMANTIC"
                 self.msg = self.msgsSemantic[code]
             else:
