@@ -5,13 +5,13 @@ class Error:
 
     def __init__(self, fileName, code, line, column):
         self.msgsSyntax = configparser.ConfigParser()
-        self.msgsSyntax.read("./flake8-syntax-msgs.properties")
+        self.msgsSyntax.read("../flake8-syntax-msgs.properties")
 
         self.msgsSemantic = configparser.ConfigParser()
-        self.msgsSemantic.read("./flake8-semantic-msgs.properties")
+        self.msgsSemantic.read("../flake8-semantic-msgs.properties")
 
         self.msgsStyle = configparser.ConfigParser()
-        self.msgsStyle.read("./flake8-style-msgs.properties")
+        self.msgsStyle.read("../flake8-style-msgs.properties")
 
         self.fileName = fileName
         self.code = code
