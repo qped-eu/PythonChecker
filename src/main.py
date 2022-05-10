@@ -2,6 +2,7 @@ from sys import exit, stderr
 from parser import Parser
 import json
 
+
 def main(filename):
     try:
         filename = "./output.txt"
@@ -14,10 +15,10 @@ def main(filename):
         json_file.close()
 
         for path, code, line, char, description in fileparser.parse():
-           errors.append((code, line, char, description))
+            errors.append((code, line, char, description))
 
         qf['feedback'] = errors
-        json_file = open('qf.json','w')
+        json_file = open('qf.json', 'w')
         json.dump(qf, json_file)
         json_file.close()
 
@@ -26,6 +27,7 @@ def main(filename):
         stderr.write('Could not open file: %s' % e)
         stderr.flush()
         exit(1)
+
 
 if __name__ == '__main__':
     main('hola')
