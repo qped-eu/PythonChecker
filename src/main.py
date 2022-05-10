@@ -25,25 +25,25 @@ def main(filename):
         for path, code, line, char, description in fileparser.parse():
             errors.append(Error(path, code, line, char))
 
-        syntaxerrors = filter(lambda err: err.type == "SYNTAX", errors)
+        syntaxerrors = list(filter(lambda err: err.type == "SYNTAX", errors))
 
-        if len(list(syntaxerrors)) != 0:
+        if len(syntaxerrors) != 0:
             qf['feedback'].append("## Syntax errors")
 
         for error in syntaxerrors:
             qf['feedback'].append(error.toMarkdown())
 
-        semanticerrors = filter(lambda err: err.type == "SEMANTIC", errors)
+        semanticerrors = list(filter(lambda err: err.type == "SEMANTIC", errors))
 
-        if len(list(semanticerrors)) != 0:
+        if len(semanticerrors) != 0:
             qf['feedback'].append("## Semantic errors")
 
         for error in semanticerrors:
             qf['feedback'].append(error.toMarkdown())
 
-        styleerrors = filter(lambda err: err.type == "STYLE", errors)
+        styleerrors = list(filter(lambda err: err.type == "STYLE", errors))
 
-        if len(list(styleerrors)) != 0:
+        if len(styleerrors) != 0:
             qf['feedback'].append("## Style errors")
 
         for error in styleerrors:
