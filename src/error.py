@@ -30,4 +30,4 @@ class Error:
                 self.msg = self.msgsStyle #self.msgsStyle[code]
 
     def toString(self):
-        return type + " - " + self.code + " (" + self.line + "," + self.column + ") --> " + self.msg
+        return self.type + " - " + self.code + " (" + self.line + "," + self.column + ") --> " + self.msg
