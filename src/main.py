@@ -10,12 +10,12 @@ def main(filename):
         errors = []
 
         qf = open('qf.json', 'w')
-        qf['feedback'] = {};
+        qf['feedback'] = {'apple', 'orange', 'apple', 'pear', 'orange', 'banana'}
 
         # for path, code, line, char, description in fileparser.parse():
         #    errors.append((code, line, char, description))
 
-        qf['feedback'] = {"hola"}
+        #qf['feedback'] = {"hola"}
         qf.close()
 
 
