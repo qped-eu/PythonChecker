@@ -27,7 +27,7 @@ def main(filename):
 
         syntaxerrors = filter(lambda err: err.type == "SYNTAX", errors)
 
-        if len(syntaxerrors) != 0:
+        if len(list(syntaxerrors)) != 0:
             qf['feedback'].append("## Syntax errors")
 
         for error in syntaxerrors:
@@ -35,7 +35,7 @@ def main(filename):
 
         semanticerrors = filter(lambda err: err.type == "SEMANTIC", errors)
 
-        if len(semanticerrors) != 0:
+        if len(list(semanticerrors)) != 0:
             qf['feedback'].append("## Semantic errors")
 
         for error in semanticerrors:
@@ -43,7 +43,7 @@ def main(filename):
 
         styleerrors = filter(lambda err: err.type == "STYLE", errors)
 
-        if len(styleerrors) != 0:
+        if len(list(styleerrors)) != 0:
             qf['feedback'].append("## Style errors")
 
         for error in styleerrors:
