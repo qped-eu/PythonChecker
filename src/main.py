@@ -6,11 +6,7 @@ import json
 
 def main(filename):
     try:
-
-
-
         #read flake8 output file
-        filename = "./output.txt"
         f = open(filename)
         fileparser = Parser(f)
         errors = []
@@ -20,11 +16,11 @@ def main(filename):
         qf = json.load(json_file)
         json_file.close()
 
+        qf['feedback'] = []
+
         for path, code, line, char, description in fileparser.parse():
             #errors.append((code, line, char, description))
-            errors.append(Error(path,code,line,char))
-
-        for error in errors:
+            error = Error(path,code,line,char)
             qf['feedback'].append(error.toString())
 
         #qf['feedback'] = errors
@@ -41,4 +37,4 @@ def main(filename):
 
 
 if __name__ == '__main__':
-    main('hola')
+    main("./output.txt")
