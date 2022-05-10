@@ -20,11 +20,11 @@ class Error:
 
         if code in self.msgsSyntax:
             self.type = "SYNTAX"
-            self.msg = self.msgsSyntax[code]
+            self.msg = self.msgsSyntax['syntax'][code]
         else:
             if code in self.msgsSemantic:
                 self.type = "SEMANTIC"
-                self.msg = self.msgsSemantic[code]
+                self.msg = self.msgsSemantic['semantic'][code]
             else:
                 self.type = "STYLE"
                 self.msg = self.msgsStyle['style']['E101'] #self.msgsStyle[code]
