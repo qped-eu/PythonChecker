@@ -18,11 +18,11 @@ class Error:
         self.line = line
         self.column = column
 
-        if self.msgsSyntax[code] is not None:
+        if code in self.msgsSyntax:
             self.type = "SYNTAX"
             self.msg = self.msgsSyntax[code]
         else:
-            if self.msgsSemantic[code] is not None:
+            if code in self.msgsSemantic[code]:
                 self.type = "SEMANTIC"
                 self.msg = self.msgsSemantic[code]
             else:
