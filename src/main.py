@@ -13,10 +13,10 @@ def main(filename):
         qf = json.load(json_file)
         json_file.close()
 
-        #for path, code, line, char, description in fileparser.parse():
-        #   errors.append((code, line, char, description))
+        for path, code, line, char, description in fileparser.parse():
+           errors.append((code, line, char, description))
 
-        qf['feedback'] = ["hola"] #errors
+        qf['feedback'] = ["eps"] #errors
         json_file = open('qf.json','w')
         json.dump(qf, json_file)
         json_file.close()
