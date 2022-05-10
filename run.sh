@@ -2,7 +2,7 @@
 echo "$answer" > ./src/answer.py
 
 #run flake8
-flake8 answer.py --output-file=output.txt
+#flake8 ./src/answer.py --output-file=output.txt
 
 # run the analysis
 python3 src/main.py
