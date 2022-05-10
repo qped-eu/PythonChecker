@@ -4,9 +4,9 @@ import json
 
 def main(filename):
     try:
-        #filename = "./output.txt"
-        #f = open(filename)
-        #fileparser = Parser(f)
+        filename = "./output.txt"
+        f = open(filename)
+        fileparser = Parser(f)
         errors = []
 
         json_file = open('qf.json')
