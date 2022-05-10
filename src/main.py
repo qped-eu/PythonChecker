@@ -13,7 +13,7 @@ def main(filename):
         qf = json.load(json_file)
         json_file.close()
 
-        qf['feedback'] = {'apple', 'orange', 'apple', 'pear', 'orange', 'banana'}
+        qf['powerCorrect'] = True
 
         # for path, code, line, char, description in fileparser.parse():
         #    errors.append((code, line, char, description))
