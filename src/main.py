@@ -42,7 +42,7 @@ def main(filename):
             for error in semanticerrors:
                 qf['feedback'].append(error.toMarkdown())
 
-        if 'mainSettings' in qf and 'styleNeeded' in qf['mainSettings']:
+        if 'mainSettings' in qf:
             styleerrors = list(filter(lambda err: err.type == "STYLE", errors))
 
             if len(styleerrors) != 0:
