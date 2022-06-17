@@ -33,7 +33,7 @@ def main(filename):
         for error in syntaxerrors:
             qf['feedback'].append(error.toMarkdown())
 
-        if qf['maingSettings']['semanticNeeded'] == True:
+        if qf['mainSettings']['semanticNeeded'] == True:
             semanticerrors = list(filter(lambda err: err.type == "SEMANTIC", errors))
 
             if len(semanticerrors) != 0:
@@ -42,7 +42,7 @@ def main(filename):
             for error in semanticerrors:
                 qf['feedback'].append(error.toMarkdown())
 
-        if qf['maingSettings']['styleNeeded'] == True:
+        if qf['mainSettings']['styleNeeded'] == True:
             styleerrors = list(filter(lambda err: err.type == "STYLE", errors))
 
             if len(styleerrors) != 0:
