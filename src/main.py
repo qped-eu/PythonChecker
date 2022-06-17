@@ -34,7 +34,7 @@ def main(filename):
             qf['feedback'].append(error.toMarkdown())
 
         if 'mainSettings' in qf and 'semanticNeeded' in qf['mainSettings'] and qf['mainSettings'][
-            'semanticNeeded'] == True:
+            'semanticNeeded'] == 'true':
 
             semanticerrors = list(filter(lambda err: err.type == "SEMANTIC", errors))
 
