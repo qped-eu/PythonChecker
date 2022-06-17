@@ -33,21 +33,23 @@ def main(filename):
         for error in syntaxerrors:
             qf['feedback'].append(error.toMarkdown())
 
-        semanticerrors = list(filter(lambda err: err.type == "SEMANTIC", errors))
+        if qf['maingSettings']['semanticNeeded'] == True:
+            semanticerrors = list(filter(lambda err: err.type == "SEMANTIC", errors))
 
-        if len(semanticerrors) != 0:
-            qf['feedback'].append("## Semantic errors")
+            if len(semanticerrors) != 0:
+                qf['feedback'].append("## Semantic errors")
 
-        for error in semanticerrors:
-            qf['feedback'].append(error.toMarkdown())
+            for error in semanticerrors:
+                qf['feedback'].append(error.toMarkdown())
 
-        styleerrors = list(filter(lambda err: err.type == "STYLE", errors))
+        if qf['maingSettings']['styleNeeded'] == True:
+            styleerrors = list(filter(lambda err: err.type == "STYLE", errors))
 
-        if len(styleerrors) != 0:
-            qf['feedback'].append("## Style errors")
+            if len(styleerrors) != 0:
+                qf['feedback'].append("## Style errors")
 
-        for error in styleerrors:
-            qf['feedback'].append(error.toMarkdown())
+            for error in styleerrors:
+                qf['feedback'].append(error.toMarkdown())
 
         # Write qf.json
         json_file = open('qf.json', 'w')
