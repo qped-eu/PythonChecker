@@ -45,7 +45,7 @@ def main(filename):
                 qf['feedback'].append(error.toMarkdown())
 
         if 'mainSettings' in qf and 'styleNeeded' in qf['mainSettings'] and qf['mainSettings'][
-            'styleNeeded'] == True:
+            'styleNeeded'] == 'true':
 
             styleerrors = list(filter(lambda err: err.type == "STYLE", errors))
 
