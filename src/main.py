@@ -29,6 +29,8 @@ def main(filename):
 
         if 'mainSettings' in qf and 'errorsCategorized' in qf['mainSettings'] and qf['mainSettings']['errorsCategorized'] == 'false':
 
+            qf['feedback'].append("CORRECTTTTT")
+
             errors = sorted(errors, key=lambda e: e.line)
 
             for error in errors:
