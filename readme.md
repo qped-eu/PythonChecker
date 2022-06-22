@@ -17,7 +17,7 @@ You can see the list of style errors [here](/flake8-style-msgs.properties).
 ### Semantics Checker
 Semantics checker analyzes the meaning of the code. For example, two typical semantic errors are the variable is not defined where it is used and two parameters in a function has the same name.  
 
-You can see the list of syntax errors [here](/flake8-semantic-msgs.properties).
+You can see the list of semantic errors [here](/flake8-semantic-msgs.properties).
 
 Configuration
 ------------

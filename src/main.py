@@ -25,9 +25,13 @@ def main(filename):
         for path, code, line, char, description in fileparser.parse():
             errors.append(Error(path, code, line, char))
 
+
+
         if 'mainSettings' in qf and 'errorsCategorized' in qf['mainSettings'] and qf['mainSettings']['errorsCategorized'] == 'false':
 
-            for error in sorted(errors, key=lambda err: err.line):
+            errors = sorted(errors, key=lambda e: e.line)
+
+            for error in errors:
                 qf['feedback'].append(error.toMarkdown())
 
         else:
