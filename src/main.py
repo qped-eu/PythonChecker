@@ -25,35 +25,42 @@ def main(filename):
         for path, code, line, char, description in fileparser.parse():
             errors.append(Error(path, code, line, char))
 
-        syntaxerrors = list(filter(lambda err: err.type == "SYNTAX", errors))
+        if 'mainSettings' in qf and 'errorsCategorized' in qf['mainSettings'] and qf['mainSettings']['errorsCategorized'] == 'false':
 
-        if len(syntaxerrors) != 0:
-            qf['feedback'].append("## Syntax errors")
-
-        for error in syntaxerrors:
-            qf['feedback'].append(error.toMarkdown())
-
-        if 'mainSettings' in qf and 'semanticNeeded' in qf['mainSettings'] and qf['mainSettings'][
-            'semanticNeeded'] == 'true':
-
-            semanticerrors = list(filter(lambda err: err.type == "SEMANTIC", errors))
-
-            if len(semanticerrors) != 0:
-                qf['feedback'].append("## Semantic errors")
-
-            for error in semanticerrors:
+            for error in sorted(errors, key=lambda err: err.line):
                 qf['feedback'].append(error.toMarkdown())
 
-        if 'mainSettings' in qf and 'styleNeeded' in qf['mainSettings'] and qf['mainSettings'][
-            'styleNeeded'] == 'true':
+        else:
 
-            styleerrors = list(filter(lambda err: err.type == "STYLE", errors))
+            syntaxerrors = list(filter(lambda err: err.type == "SYNTAX", errors))
 
-            if len(styleerrors) != 0:
-                qf['feedback'].append("## Style errors")
+            if len(syntaxerrors) != 0:
+                qf['feedback'].append("## Syntax errors")
 
-            for error in styleerrors:
+            for error in syntaxerrors:
                 qf['feedback'].append(error.toMarkdown())
+
+            if 'mainSettings' in qf and 'semanticNeeded' in qf['mainSettings'] and qf['mainSettings'][
+                'semanticNeeded'] == 'true':
+
+                semanticerrors = list(filter(lambda err: err.type == "SEMANTIC", errors))
+
+                if len(semanticerrors) != 0:
+                    qf['feedback'].append("## Semantic errors")
+
+                for error in semanticerrors:
+                    qf['feedback'].append(error.toMarkdown())
+
+            if 'mainSettings' in qf and 'styleNeeded' in qf['mainSettings'] and qf['mainSettings'][
+                'styleNeeded'] == 'true':
+
+                styleerrors = list(filter(lambda err: err.type == "STYLE", errors))
+
+                if len(styleerrors) != 0:
+                    qf['feedback'].append("## Style errors")
+
+                for error in styleerrors:
+                    qf['feedback'].append(error.toMarkdown())
 
         # Write qf.json
         json_file = open('qf.json', 'w')
