@@ -31,7 +31,8 @@ Thanks to the `mainSettings` object, we can configure the global aspects of the 
 | `semanticNeeded`| Indicates if the feedback must provide semantic errors | true or **false** |
 | `errorsCategorized`| Indicates if the feedback must provide errors separated in categories (i.e. syntax, style and semantic) | **true** or false |
 
-As you can see, there is not an option for syntax errors. Due to the importance of syntax erros, they are always provided.
+> ### Syntax errors
+> As you can see, there is not an option for syntax errors. Due to the importance of syntax errors, they are always provided.
 
 An example of configuration, in Quarterfall, in which the three types of errors are asked to be provided with the feedback would be:
 
