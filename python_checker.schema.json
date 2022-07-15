@@ -1,0 +1,37 @@
+{
+  "$id": "http://github.com/qped-edu/PythonCehcker/python_checker.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "description": "Enter the description configuration of the Python Checker, part of the QPED project.",
+  "documentation": "The [Universitat Oberta de Catalunya](http://www.uoc.edu) is part of the project [Quality-focussed Programming Education (QPED)](https://qped.eu), co-funded by the [Erasmus+-Program of the European Union](https://erasmus-plus.ec.europa.eu) (2020-1-NL01-KA203-064626).\n\nPython Checker performs checks on student solutions to programming assignents in the Python language, with respect to different aspects: syntax, style and semantic. Only the syntax check is mandatory, all other checks are optional. In this configuration, lectures can specify which checks that want to be performed on student solutions and configure these checks according to the requirements of their assignment.",
+  "type": "object",
+  "title": "QPED-Python Checker Configuration",
+  "additionalProperties": false,
+	"properties": {
+		"styleNeeded":{
+
+"type": "boolean",
+"title": "Enable/Disable Style Checker",
+"description": "Indicates if style errors must be checked.",
+"documention": "Indicates if style errors must be checked.",
+"default": false
+},
+"semanticNeeded":{
+
+"type": "boolean",
+"title": "Enable/Disable Semantic Checker",
+"description": "Indicates if semantic errors must be checked.",
+"documention": "Indicates if semantic errors must be checked.",
+"default": false
+},
+"errorsCategorized":{
+
+"type": "boolean",
+"title": "Must errors be displayed in categories?",
+"description": "Indicates if the errors must be shown in categories or in the order that they appear in the code.",
+"documention": "Indicates if the errors must be shown in categories or in the order that they appear in the code.",
+"default": true
+}
+}
+			
+
+
